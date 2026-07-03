@@ -1,0 +1,32 @@
+id: interest_rate_differential
+title: US-Japan Interest Rate Differential
+category: market_structure
+summary: >
+  The gap between US and Japanese interest rates. Widely considered one
+  of the single most important structural drivers of USD/JPY over the
+  medium-to-long term.
+details: >
+  When US rates are meaningfully higher than Japanese rates, holding
+  Dollar-denominated assets (like US Treasury bonds) pays a higher
+  yield than holding equivalent Yen-denominated assets. This encourages
+  capital flows into Dollars, supporting USD/JPY. This dynamic is
+  closely tied to the "carry trade" — borrowing in a low-yield currency
+  (Yen) to invest in a higher-yield one (Dollar) — a strategy that
+  becomes more attractive as the differential widens, and can unwind
+  sharply (strengthening the Yen quickly) if the gap narrows
+  unexpectedly or market risk appetite drops.
+why_it_matters_for_usdjpy: >
+  This is arguably the central macro narrative for USD/JPY specifically,
+  more than for most other currency pairs, because the US-Japan rate
+  gap has been unusually large and persistent in recent years. Nearly
+  every other entry in this knowledge base (Fed policy, BOJ policy, US
+  and Japan inflation data) ultimately connects back to this
+  differential in some way.
+related_entries:
+  - fed_funds_rate
+  - boj_policy_rate
+  - us_cpi
+  - japan_cpi
+sources:
+  - Synthesized from Federal Reserve and Bank of Japan policy publications
+last_updated: "2026-07-03"

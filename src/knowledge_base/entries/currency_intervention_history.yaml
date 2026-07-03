@@ -1,0 +1,32 @@
+id: currency_intervention_history
+title: Japan Currency Intervention History
+category: market_structure
+summary: >
+  Japan's Ministry of Finance, executed through the BOJ, has periodically
+  intervened directly in currency markets — buying or selling Yen — to
+  counter what it considers excessive or disorderly moves in USD/JPY.
+details: >
+  Unlike routine monetary policy (setting interest rates), intervention
+  is a direct, deliberate action of buying or selling currency to
+  influence its price. Japan has historically intervened most often to
+  weaken an excessively strong Yen (helpful for Japanese exporters), but
+  in periods of rapid Yen weakness, Japan has also intervened to buy Yen
+  and slow the pair's rise. Interventions are relatively rare, often
+  unannounced in advance, and tend to be triggered by the *speed* of a
+  move as much as its absolute level — officials have frequently
+  cited concern about "one-sided" or "rapid" moves specifically, rather
+  than a fixed price target.
+why_it_matters_for_usdjpy: >
+  Intervention risk is a distinctive feature of USD/JPY not present in
+  most other major currency pairs. Even the possibility of intervention
+  can affect trader behavior near levels officials have previously
+  signaled concern about, since a sudden intervention can produce a
+  sharp, fast move against a prevailing trend — a real risk factor any
+  USD/JPY strategy should account for explicitly (see Risk Governance,
+  Phase 11).
+related_entries:
+  - boj_policy_rate
+  - interest_rate_differential
+sources:
+  - Japan Ministry of Finance public statements; historical market records
+last_updated: "2026-07-03"

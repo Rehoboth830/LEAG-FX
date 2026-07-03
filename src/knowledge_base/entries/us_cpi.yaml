@@ -1,0 +1,27 @@
+id: us_cpi
+title: US Consumer Price Index (CPI)
+category: us_indicator
+summary: >
+  The most widely watched measure of US inflation, tracking the average
+  change in prices paid by consumers for a basket of goods and services.
+details: >
+  CPI is released monthly by the Bureau of Labor Statistics. Markets
+  typically focus on two versions: headline CPI (all items) and core
+  CPI (excluding volatile food and energy prices, seen as a cleaner
+  signal of underlying inflation trend). CPI is one of the primary
+  inputs the Fed considers when deciding whether to raise, hold, or
+  lower interest rates — persistently high CPI readings increase the
+  likelihood of continued rate hikes or delayed cuts.
+why_it_matters_for_usdjpy: >
+  A hotter-than-expected CPI reading tends to raise expectations that
+  the Fed will keep rates higher for longer, which widens the US-Japan
+  interest rate differential and typically strengthens USD/JPY. A
+  cooler-than-expected reading has the opposite effect. CPI release days
+  are consistently high-volatility events for the pair.
+related_entries:
+  - fed_funds_rate
+  - fomc
+  - us_pce
+sources:
+  - US Bureau of Labor Statistics (bls.gov)
+last_updated: "2026-07-03"

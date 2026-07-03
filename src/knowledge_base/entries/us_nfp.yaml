@@ -1,0 +1,29 @@
+id: us_nfp
+title: US Non-Farm Payrolls (NFP)
+category: us_indicator
+summary: >
+  A monthly report measuring the change in the number of paid US
+  workers, excluding farm employees, government employees, and a few
+  other categories. One of the most closely watched economic releases
+  in the world.
+details: >
+  Released on the first Friday of each month by the Bureau of Labor
+  Statistics, NFP is a direct read on US labor market health. It's
+  accompanied by the unemployment rate and average hourly earnings
+  figures, which together give a fuller picture of employment strength
+  and wage growth (wage growth feeds back into inflation expectations).
+  NFP is famous for surprising markets — actual figures frequently
+  differ significantly from analyst expectations, producing some of the
+  sharpest single-day moves across many asset classes.
+why_it_matters_for_usdjpy: >
+  A strong NFP report (more jobs added than expected) signals a healthy
+  economy, which can support the case for the Fed keeping rates higher,
+  typically strengthening the Dollar against the Yen. A weak report can
+  do the opposite. Because NFP surprises are common and large, this is
+  one of the single highest-volatility scheduled events for USD/JPY.
+related_entries:
+  - fed_funds_rate
+  - fomc
+sources:
+  - US Bureau of Labor Statistics (bls.gov)
+last_updated: "2026-07-03"

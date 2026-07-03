@@ -1,0 +1,30 @@
+id: japan_cpi
+title: Japan Consumer Price Index (CPI)
+category: japan_indicator
+summary: >
+  Japan's primary measure of consumer inflation, released monthly.
+  Historically significant because Japan spent decades battling
+  deflation (falling prices) rather than the inflation most economies
+  worry about.
+details: >
+  Released by Japan's Ministry of Internal Affairs and Communications,
+  CPI in Japan is watched partly for its level, but perhaps more
+  importantly for the *trend* — whether Japan is durably escaping the
+  low-inflation, low-growth pattern that defined much of its recent
+  economic history. A sustained rise in CPI closer to or above the
+  BOJ's target is often cited as a precondition for the BOJ to consider
+  tightening policy (raising rates from near-zero levels).
+why_it_matters_for_usdjpy: >
+  Rising Japanese inflation strengthens the case for BOJ tightening,
+  which would narrow the US-Japan interest rate differential and tends
+  to strengthen the Yen against the Dollar. Because Japan's inflation
+  story has been unusual for so long, any meaningful CPI trend shift
+  draws outsized attention relative to what a similar move might cause
+  in most other economies.
+related_entries:
+  - boj_policy_rate
+  - boj_tankan_survey
+  - interest_rate_differential
+sources:
+  - Japan Ministry of Internal Affairs and Communications (stat.go.jp)
+last_updated: "2026-07-03"

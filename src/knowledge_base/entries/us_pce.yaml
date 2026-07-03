@@ -1,0 +1,29 @@
+id: us_pce
+title: US Personal Consumption Expenditures (PCE) Price Index
+category: us_indicator
+summary: >
+  A measure of inflation based on actual consumer spending patterns.
+  Notably, this is the Federal Reserve's officially preferred inflation
+  gauge — not CPI.
+details: >
+  Released monthly by the Bureau of Economic Analysis, PCE differs from
+  CPI in how it weights and measures spending — it adjusts more
+  dynamically as consumers substitute between goods (e.g., switching to
+  cheaper alternatives when prices rise), which the Fed considers a more
+  accurate real-world picture. Like CPI, markets watch both headline and
+  "core" PCE (excluding food and energy). Because the Fed has explicitly
+  stated PCE is its preferred measure, this release can move markets
+  even when CPI has already been reported for the same period.
+why_it_matters_for_usdjpy: >
+  Because PCE is the Fed's own preferred inflation gauge, it carries
+  particular weight in shaping rate expectations — sometimes more than
+  CPI, despite CPI often receiving more media attention. A hot PCE
+  reading reinforces expectations of continued restrictive Fed policy,
+  supporting a stronger Dollar against the Yen.
+related_entries:
+  - us_cpi
+  - fed_funds_rate
+  - fomc
+sources:
+  - US Bureau of Economic Analysis (bea.gov)
+last_updated: "2026-07-03"

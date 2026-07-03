@@ -1,0 +1,28 @@
+id: japan_gdp
+title: Japan Gross Domestic Product (GDP)
+category: japan_indicator
+summary: >
+  Japan's broadest measure of total economic output, released
+  quarterly, tracking whether the economy is expanding or contracting.
+details: >
+  Released by Japan's Cabinet Office, GDP figures are watched for signs
+  of durable growth, since Japan has faced long periods of sluggish
+  expansion. As with US GDP, an initial estimate is followed by
+  revisions. Japan's GDP trend feeds into the broader question the BOJ
+  weighs when considering policy normalization — a persistently weak
+  economy makes the BOJ far more cautious about raising rates, even if
+  inflation is rising, since higher rates could choke off fragile
+  growth.
+why_it_matters_for_usdjpy: >
+  Weak Japanese GDP tends to reinforce BOJ caution, supporting continued
+  low rates and a wider (Dollar-favoring) interest rate differential.
+  Stronger-than-expected GDP can add to the case for BOJ tightening,
+  supporting Yen strength — though GDP alone rarely moves the pair as
+  sharply as CPI or policy rate decisions do.
+related_entries:
+  - boj_policy_rate
+  - japan_cpi
+  - us_gdp
+sources:
+  - Japan Cabinet Office (cao.go.jp)
+last_updated: "2026-07-03"

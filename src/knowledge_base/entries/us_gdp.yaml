@@ -1,0 +1,29 @@
+id: us_gdp
+title: US Gross Domestic Product (GDP)
+category: us_indicator
+summary: >
+  The broadest single measure of total US economic output, tracking the
+  value of all goods and services produced in a given period.
+details: >
+  GDP is released quarterly, with an initial "advance" estimate followed
+  by revisions as more complete data comes in. It's typically reported
+  as an annualized growth rate. While less frequent than CPI or NFP,
+  GDP is the fundamental scorecard for whether the economy is expanding
+  or contracting — a recession is technically defined by consecutive
+  quarters of negative GDP growth. It informs the broader macro backdrop
+  the Fed considers when setting policy, even though it moves markets
+  less sharply than monthly indicators due to its lower frequency.
+why_it_matters_for_usdjpy: >
+  Strong US GDP growth generally supports a stronger Dollar, both
+  because it reinforces confidence in the Fed maintaining or raising
+  rates, and because it can attract foreign investment into US assets.
+  Weak or negative GDP growth raises recession concerns, which can
+  complicate the interest-rate-differential story if it leads markets
+  to expect rate cuts.
+related_entries:
+  - fed_funds_rate
+  - us_cpi
+  - japan_gdp
+sources:
+  - US Bureau of Economic Analysis (bea.gov)
+last_updated: "2026-07-03"
