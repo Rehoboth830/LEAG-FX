@@ -1,0 +1,29 @@
+id: london_session
+title: London Trading Session
+category: market_structure
+summary: >
+  The European trading session, generally considered the highest-volume
+  session in global FX trading overall.
+details: >
+  Roughly 07:00-16:00 UTC. London handles the largest share of daily
+  global FX turnover of any single trading center, reflecting its role
+  as a hub connecting Asian and US markets. For USD/JPY specifically,
+  the London session often sees continuation or reversal of moves that
+  began in Tokyo, as broader global participants weigh in. Major
+  European economic data isn't typically a direct USD/JPY driver, but
+  the sheer trading volume during this session affects liquidity and
+  volatility for nearly every major pair, including USD/JPY.
+why_it_matters_for_usdjpy: >
+  While London isn't the "home" session for either currency in this
+  pair, its high liquidity means price action here is often treated as
+  more technically significant — moves are considered to reflect
+  broader market consensus rather than thinner regional flows. The
+  transition from Tokyo to London can also produce a shift in
+  volatility and direction worth watching.
+related_entries:
+  - tokyo_session
+  - new_york_session
+  - session_overlaps
+sources:
+  - Standard FX market trading hours conventions
+last_updated: "2026-07-03"

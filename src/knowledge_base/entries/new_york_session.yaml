@@ -1,0 +1,30 @@
+id: new_york_session
+title: New York Trading Session
+category: market_structure
+summary: >
+  The US trading session, when American institutions are active and
+  most major US economic data (CPI, NFP, GDP) is released.
+details: >
+  Roughly 12:00-21:00 UTC. This session directly hosts the release of
+  the majority of high-impact US economic indicators covered elsewhere
+  in this knowledge base (us_cpi, us_nfp, us_gdp, us_pce), as well as
+  FOMC announcements. Because USD is one half of USD/JPY, this session
+  carries outsized importance for the pair — arguably more than Tokyo
+  or London individually, since it's the session most likely to contain
+  the specific scheduled events that move this pair the most.
+why_it_matters_for_usdjpy: >
+  Most of the highest-volatility, highest-impact scheduled events for
+  USD/JPY (NFP, CPI, FOMC decisions) occur during New York hours. Any
+  system trading this pair needs explicit awareness of New York session
+  timing and its economic calendar, more so than for the other two
+  sessions individually.
+related_entries:
+  - tokyo_session
+  - london_session
+  - session_overlaps
+  - us_cpi
+  - us_nfp
+  - fomc
+sources:
+  - Standard FX market trading hours conventions
+last_updated: "2026-07-03"

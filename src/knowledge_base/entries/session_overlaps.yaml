@@ -1,0 +1,31 @@
+id: session_overlaps
+title: Trading Session Overlaps
+category: market_structure
+summary: >
+  The windows where two major trading sessions are active at once,
+  producing the highest liquidity and often the highest volatility
+  periods of the trading day.
+details: >
+  There are two main overlaps relevant to USD/JPY. The Tokyo-London
+  overlap is brief and relatively minor. The London-New York overlap
+  (roughly 12:00-16:00 UTC) is the most significant overlap in global
+  FX generally — both major Western financial centers are active
+  simultaneously, producing the highest combined trading volume of the
+  day. For USD/JPY, this overlap frequently coincides with the release
+  of major US economic data (which tends to land in early-to-mid New
+  York hours), compounding both volume and event-driven volatility at
+  once.
+why_it_matters_for_usdjpy: >
+  The London-New York overlap is typically the highest-volatility, most
+  liquid window for USD/JPY on a normal trading day, and it's also when
+  most scheduled high-impact US data hits. Any risk governance rules
+  around position sizing or volatility filters (Phase 11) should account
+  for this window specifically, since normal volatility assumptions may
+  not hold during it.
+related_entries:
+  - tokyo_session
+  - london_session
+  - new_york_session
+sources:
+  - Standard FX market trading hours conventions
+last_updated: "2026-07-03"

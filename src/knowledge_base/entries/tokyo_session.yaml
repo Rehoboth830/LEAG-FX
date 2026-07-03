@@ -1,0 +1,30 @@
+id: tokyo_session
+title: Tokyo Trading Session
+category: market_structure
+summary: >
+  The Asian trading session, centered on Tokyo market hours, when
+  Japanese institutions and the BOJ are most active. The natural
+  starting point of each new trading day for USD/JPY.
+details: >
+  Roughly 00:00-09:00 UTC (exact hours shift slightly with daylight
+  saving in other regions, though Japan itself doesn't observe DST).
+  This session tends to have lower overall volatility than London or
+  New York, since fewer major global participants are active. However,
+  it's specifically important for USD/JPY because Japanese domestic
+  flows, BOJ-related news, and Japanese economic data releases
+  concentrate here. Price moves originating in this session can set the
+  tone (a "range" or a directional bias) that carries into the busier
+  sessions later in the day.
+why_it_matters_for_usdjpy: >
+  This is the session where Japan-specific news and data most directly
+  affect the pair, making it disproportionately important for USD/JPY
+  specifically compared to pairs with less Asian-session relevance. Low
+  overall volume here also means the same-size order can move price
+  more than it would during London or New York hours.
+related_entries:
+  - london_session
+  - new_york_session
+  - session_overlaps
+sources:
+  - Standard FX market trading hours conventions
+last_updated: "2026-07-03"
