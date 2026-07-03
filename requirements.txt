@@ -7,3 +7,5 @@ pytest
 
 black
 ruff
+
+pyyaml
