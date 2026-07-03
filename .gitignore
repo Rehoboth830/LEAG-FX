@@ -16,6 +16,9 @@ data/validated/*
 !data/raw/.gitkeep
 !data/validated/.gitkeep
 
+# Logs (regenerated, not committed)
+logs/
+
 # OS/editor
 .DS_Store
 .vscode/
