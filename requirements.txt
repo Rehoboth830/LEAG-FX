@@ -9,3 +9,5 @@ black
 ruff
 
 pyyaml
+
+yfinance
