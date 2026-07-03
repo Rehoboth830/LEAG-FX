@@ -1,0 +1,31 @@
+id: boj_policy_rate
+title: Bank of Japan Policy Rate
+category: boj_policy
+summary: >
+  The short-term interest rate target set by the Bank of Japan, Japan's
+  central bank. For most of the last several decades, this rate has
+  been near zero or negative — a distinct contrast to typical US rates.
+details: >
+  The BOJ has historically pursued extremely accommodative monetary
+  policy (very low or negative rates, large-scale asset purchases) to
+  fight persistent low inflation and weak growth in Japan — a different
+  economic situation than the US has generally faced. Policy decisions
+  are made at scheduled BOJ Monetary Policy Meetings. Because Japan's
+  rate environment has been so persistently low, any signal of a shift
+  away from this stance tends to draw outsized market attention, since
+  it would be a genuine change after a long period of stability.
+why_it_matters_for_usdjpy: >
+  Japan's persistently low rates, relative to higher US rates, are the
+  other half of the interest rate differential driving USD/JPY (see
+  fed_funds_rate). Any BOJ move toward tightening (raising rates) tends
+  to strengthen the Yen, since it narrows that gap — which is why BOJ
+  policy statements are watched closely even when a change seems
+  unlikely.
+related_entries:
+  - fed_funds_rate
+  - interest_rate_differential
+  - boj_tankan_survey
+  - currency_intervention_history
+sources:
+  - Bank of Japan official publications (boj.or.jp)
+last_updated: "2026-07-03"

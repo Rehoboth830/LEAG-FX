@@ -1,0 +1,31 @@
+id: fed_funds_rate
+title: Federal Funds Rate
+category: fed_policy
+summary: >
+  The interest rate the US Federal Reserve sets as a target for banks
+  lending reserves to each other overnight. It's the primary lever the
+  Fed uses to influence the broader US economy.
+details: >
+  The Federal Reserve doesn't directly set every interest rate in the
+  economy, but the federal funds rate acts as an anchor that other rates
+  (mortgages, business loans, savings yields) tend to follow. When the
+  Fed raises this rate, borrowing becomes more expensive across the
+  economy, which tends to slow spending and cool inflation. When it
+  lowers the rate, borrowing becomes cheaper, encouraging spending and
+  investment. The rate is set as a target range (not a single number)
+  at FOMC meetings, held roughly eight times a year.
+why_it_matters_for_usdjpy: >
+  A higher US interest rate relative to Japan's makes USD-denominated
+  assets (like US Treasury bonds) more attractive to investors seeking
+  yield, which tends to increase demand for Dollars and strengthen
+  USD/JPY. This gap between US and Japanese rates — the "interest rate
+  differential" — is one of the most consistently cited structural
+  drivers of this specific currency pair, because Japan has kept rates
+  unusually low for an extended period relative to the US.
+related_entries:
+  - fomc
+  - boj_policy_rate
+  - interest_rate_differential
+sources:
+  - Federal Reserve official publications (federalreserve.gov)
+last_updated: "2026-07-03"

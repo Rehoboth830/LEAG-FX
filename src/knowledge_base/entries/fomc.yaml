@@ -1,0 +1,28 @@
+id: fomc
+title: Federal Open Market Committee (FOMC)
+category: fed_policy
+summary: >
+  The Federal Reserve committee responsible for setting US monetary
+  policy, including the federal funds rate. Its meetings and statements
+  are among the most closely watched events in global financial markets.
+details: >
+  The FOMC meets roughly eight times per year on a pre-scheduled
+  calendar. At each meeting, it decides whether to raise, lower, or hold
+  the federal funds rate, and releases a statement explaining its
+  reasoning. Four times a year, meetings include updated economic
+  projections ("the dot plot") showing where individual members expect
+  rates to go. A press conference with the Fed Chair typically follows,
+  where wording is scrutinized closely — markets often react as much to
+  the tone and phrasing of the statement as to the rate decision itself.
+why_it_matters_for_usdjpy: >
+  FOMC meeting days are consistently among the highest-volatility events
+  for USD/JPY. Even when the rate decision itself is as expected, shifts
+  in forward guidance (hints about future rate direction) can move the
+  pair significantly, since markets are pricing in expectations, not
+  just the current rate.
+related_entries:
+  - fed_funds_rate
+  - boj_policy_rate
+sources:
+  - Federal Reserve official publications (federalreserve.gov)
+last_updated: "2026-07-03"

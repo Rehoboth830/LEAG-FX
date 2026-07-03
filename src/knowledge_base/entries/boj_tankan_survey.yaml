@@ -1,0 +1,29 @@
+id: boj_tankan_survey
+title: BOJ Tankan Survey
+category: boj_policy
+summary: >
+  A quarterly survey conducted by the Bank of Japan measuring business
+  sentiment among Japanese companies — one of the most closely watched
+  indicators of Japan's real economic health.
+details: >
+  The Tankan surveys thousands of Japanese companies, large and small,
+  across manufacturing and non-manufacturing sectors, asking about
+  current business conditions and expectations for the future. The
+  headline number ("diffusion index") reflects the percentage of firms
+  reporting favorable conditions minus those reporting unfavorable
+  conditions. It's released quarterly and is considered a more direct
+  read on business confidence than many other Japanese economic
+  indicators, because it comes from a very large, consistent survey
+  base.
+why_it_matters_for_usdjpy: >
+  A strong Tankan reading can strengthen expectations that the BOJ has
+  room to tighten policy (raise rates), since a healthier economy is
+  more able to absorb higher rates — which links back to the interest
+  rate differential story. A weak reading tends to reinforce
+  expectations that the BOJ will stay accommodative for longer.
+related_entries:
+  - boj_policy_rate
+  - japan_gdp
+sources:
+  - Bank of Japan official publications (boj.or.jp)
+last_updated: "2026-07-03"
