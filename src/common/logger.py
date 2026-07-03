@@ -7,7 +7,6 @@ consistent across the whole project (per NFR-3.1, NFR-3.2, NFR-3.3).
 """
 
 import logging
-import os
 from logging.handlers import RotatingFileHandler
 from pathlib import Path
 
