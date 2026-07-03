@@ -11,3 +11,5 @@ ruff
 pyyaml
 
 yfinance
+
+fredapi
