@@ -1,0 +1,22 @@
+# Environment & secrets
+.env
+*.env
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Data (regenerated, not committed)
+data/raw/*
+data/validated/*
+!data/raw/.gitkeep
+!data/validated/.gitkeep
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/

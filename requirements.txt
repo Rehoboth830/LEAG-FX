@@ -1,0 +1,6 @@
+# Core, added as Phase 1 environment is built out
+pandas
+numpy
+psycopg2-binary
+python-dotenv
+pytest
