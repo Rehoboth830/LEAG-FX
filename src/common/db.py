@@ -1,4 +1,4 @@
-"""
+﻿"""
 Shared PostgreSQL connection helper for LEAG FX.
 
 Every module needing database access should use get_connection() from
@@ -23,13 +23,6 @@ def get_connection():
     Returns a new psycopg2 connection using credentials from environment
     variables (loaded from .env). Caller is responsible for closing it,
     ideally via a `with` block or try/finally.
-
-    Returns:
-        A psycopg2 connection object.
-
-    Raises:
-        psycopg2.OperationalError: if the connection cannot be established
-            (e.g., Postgres container not running, wrong credentials).
     """
     try:
         conn = psycopg2.connect(
@@ -47,13 +40,12 @@ def get_connection():
 
 def run_schema_file(schema_path: str) -> None:
     """
-    Executes a .sql schema file against the database. Used to set up
-    tables (e.g., CREATE TABLE IF NOT EXISTS statements).
-
-    Args:
-        schema_path: path to the .sql file to execute.
+    Executes a .sql schema file against the database.
     """
-    with open(schema_path, "r", encoding="utf-8") as f:
+    # utf-8-sig strips a BOM if present (e.g. from PowerShell's Out-File
+    # -Encoding utf8) and behaves identically to plain utf-8 if there's
+    # no BOM — safe either way.
+    with open(schema_path, "r", encoding="utf-8-sig") as f:
         sql = f.read()
 
     conn = get_connection()
