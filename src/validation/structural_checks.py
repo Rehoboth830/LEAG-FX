@@ -95,7 +95,10 @@ def check_price_outliers(
             ValidationIssue(
                 check_name="price_outlier",
                 row_identifier=str(idx),
-                description=f"Price moved {change_pct:.1f}% from previous row (threshold {threshold*100:.0f}%)",
+                description=(
+                    f"Price moved {change_pct:.1f}% from previous row "
+                    f"(threshold {threshold*100:.0f}%)"
+                ),
             )
         )
     return issues
@@ -105,12 +108,20 @@ def check_timestamp_integrity(df: pd.DataFrame, timestamp_column: str) -> list:
     """
     Flags timestamp problems: non-monotonic order, future-dated rows,
     or missing timezone information.
+
+    Note: tz-naive and tz-aware timestamps cannot be directly compared
+    in pandas without raising an error. When timestamps are tz-naive,
+    they are localized to UTC solely for the future-date comparison —
+    the missing_timezone issue is still raised separately, since a
+    tz-naive timestamp is a real problem regardless of whether the
+    future-date check can still run.
     """
     issues = []
     if timestamp_column not in df.columns:
         return issues
 
     timestamps = pd.to_datetime(df[timestamp_column])
+    has_timezone = timestamps.dt.tz is not None
 
     if not timestamps.is_monotonic_increasing:
         issues.append(
@@ -121,23 +132,29 @@ def check_timestamp_integrity(df: pd.DataFrame, timestamp_column: str) -> list:
             )
         )
 
+    if not has_timezone:
+        issues.append(
+            ValidationIssue(
+                check_name="missing_timezone",
+                row_identifier="dataset",
+                description=(
+                    "Timestamps have no timezone information "
+                    "(expected UTC per FR-3.5)"
+                ),
+            )
+        )
+        timestamps_for_future_check = timestamps.dt.tz_localize("UTC")
+    else:
+        timestamps_for_future_check = timestamps
+
     now = pd.Timestamp.now(tz="UTC")
-    future_mask = timestamps > now
+    future_mask = timestamps_for_future_check > now
     for idx in df[future_mask].index:
         issues.append(
             ValidationIssue(
                 check_name="future_timestamp",
                 row_identifier=str(idx),
                 description="Timestamp is in the future",
-            )
-        )
-
-    if timestamps.dt.tz is None:
-        issues.append(
-            ValidationIssue(
-                check_name="missing_timezone",
-                row_identifier="dataset",
-                description="Timestamps have no timezone information (expected UTC per FR-3.5)",
             )
         )
 
@@ -154,7 +171,8 @@ def validate_market_dataframe(df: pd.DataFrame) -> ValidationReport:
 
     report = ValidationReport(total_rows=len(df), issues=issues)
     logger.info(
-        f"Market data validation: {report.total_rows} rows, {report.issue_count} issues found"
+        f"Market data validation: {report.total_rows} rows, "
+        f"{report.issue_count} issues found"
     )
     return report
 
@@ -167,6 +185,7 @@ def validate_economic_dataframe(df: pd.DataFrame) -> ValidationReport:
 
     report = ValidationReport(total_rows=len(df), issues=issues)
     logger.info(
-        f"Economic data validation: {report.total_rows} rows, {report.issue_count} issues found"
+        f"Economic data validation: {report.total_rows} rows, "
+        f"{report.issue_count} issues found"
     )
     return report
