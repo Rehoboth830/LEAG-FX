@@ -13,3 +13,5 @@ pyyaml
 yfinance
 
 fredapi
+fastapi
+uvicorn[standard]
