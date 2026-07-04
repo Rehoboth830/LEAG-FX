@@ -8,6 +8,7 @@ build anything more permanent on top of it.
 
 import yfinance as yf
 
+
 def main():
     ticker = yf.Ticker("USDJPY=X")
     data = ticker.history(period="5d")
