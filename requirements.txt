@@ -15,3 +15,4 @@ yfinance
 fredapi
 fastapi
 uvicorn[standard]
+fastapi[all]
