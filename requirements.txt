@@ -16,3 +16,7 @@ fredapi
 fastapi
 uvicorn[standard]
 fastapi[all]
+matplotlib
+statsmodels
+matplotlib
+statsmodels
