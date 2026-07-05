@@ -1,15 +1,12 @@
 ﻿"""
-Economic data ingestion pipeline (Phase 3, updated in Phase 4 Fix 4).
+Economic data ingestion pipeline (Phase 3, updated Phase 4 Fix 4,
+extended here to add PAYEMS/NFP - a real gap flagged in Phase 6 rather
+than left undocumented).
 
-Pulls core US economic indicators from FRED. Revision-prone series
-(GDP, CPIAUCSL, PCEPI) capture their REAL first-publication date
-(published_date) alongside the observation date, using FRED's vintage
-history - closing the Fix 4 gap so look-ahead bias checks can run on
-real, not synthetic, data going forward. FEDFUNDS is not revised, so
-published_date equals observation_date for it.
-
-Each series is isolated in its own try/except so one failure does not
-stop the others (Fix 2 - NFR-2.2).
+PAYEMS (Total Nonfarm Payroll Employment) is FRED's actual NFP series -
+previously missing despite the knowledge base having an entry for it.
+Treated as revision-prone (payroll figures ARE revised in later months),
+same handling as GDP/CPI/PCE.
 """
 
 import os
@@ -38,6 +35,7 @@ FRED_SERIES = {
         "name": "US Personal Consumption Expenditures Price Index",
         "revised": True,
     },
+    "PAYEMS": {"name": "Total Nonfarm Payroll Employment (NFP)", "revised": True},
 }
 
 
@@ -51,13 +49,6 @@ def get_fred_client() -> Fred:
 def fetch_series_with_publication_dates(
     fred: Fred, series_id: str, observation_start: str = "2015-01-01"
 ) -> pd.DataFrame:
-    """
-    Fetches a revision-prone series with its REAL first-publication date
-    per observation, using FRED's full vintage history.
-
-    Returns:
-        DataFrame with columns: observation_date, published_date, value.
-    """
     all_releases = fred.get_series_all_releases(series_id)
     all_releases["date"] = pd.to_datetime(all_releases["date"])
     all_releases["realtime_start"] = pd.to_datetime(all_releases["realtime_start"])
@@ -78,7 +69,6 @@ def fetch_series_with_publication_dates(
 def fetch_series_simple(
     fred: Fred, series_id: str, observation_start: str = "2015-01-01"
 ):
-    """Fetches a non-revised series with the plain get_series call."""
     data = fred.get_series(series_id, observation_start=observation_start)
     return data
 
@@ -86,12 +76,6 @@ def fetch_series_simple(
 def store_series(
     series_id: str, series_name: str, data, has_published_dates: bool = False
 ) -> int:
-    """
-    Writes a FRED series into raw_economic_data. If has_published_dates
-    is True, `data` is a DataFrame with observation_date/published_date/
-    value columns; otherwise `data` is a plain pandas Series (observation
-    date == published date, since the series isn't revised).
-    """
     conn = get_connection()
     inserted = 0
     try:
@@ -153,10 +137,6 @@ def store_series(
 
 
 def run_ingestion(observation_start: str = "2015-01-01") -> dict:
-    """
-    Full ingestion run for all series in FRED_SERIES. Each series is
-    isolated in its own try/except (Fix 2 - NFR-2.2).
-    """
     fred = get_fred_client()
     results = {}
     for series_id, info in FRED_SERIES.items():

@@ -40,7 +40,9 @@ def main():
                 )
                 stored += cur.rowcount
         conn.commit()
-        print(f"Updated economic_release_flag for {stored} dates ({len(release_dates)} real release days found)")
+        print(
+            f"Updated economic_release_flag for {stored} dates ({len(release_dates)} real release days found)"
+        )
     finally:
         conn.close()
 
