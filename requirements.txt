@@ -22,3 +22,5 @@ matplotlib
 statsmodels
 scikit-learn
 xgboost
+google-genai
+google-genai
