@@ -21,3 +21,4 @@ statsmodels
 matplotlib
 statsmodels
 scikit-learn
+xgboost
