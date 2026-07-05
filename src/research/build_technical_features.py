@@ -28,7 +28,9 @@ def main():
     finally:
         conn.close()
 
-    df["observation_date"] = pd.to_datetime(df["timestamp_utc"]).dt.tz_localize(None).dt.date
+    df["observation_date"] = (
+        pd.to_datetime(df["timestamp_utc"]).dt.tz_localize(None).dt.date
+    )
 
     rsi = compute_rsi(df["close"], window=14)
     macd = compute_macd(df["close"])
@@ -52,13 +54,37 @@ def main():
                     """,
                     (
                         None if pd.isna(rsi.iloc[i]) else float(rsi.iloc[i]),
-                        None if pd.isna(macd["macd_line"].iloc[i]) else float(macd["macd_line"].iloc[i]),
-                        None if pd.isna(macd["signal_line"].iloc[i]) else float(macd["signal_line"].iloc[i]),
-                        None if pd.isna(macd["histogram"].iloc[i]) else float(macd["histogram"].iloc[i]),
+                        (
+                            None
+                            if pd.isna(macd["macd_line"].iloc[i])
+                            else float(macd["macd_line"].iloc[i])
+                        ),
+                        (
+                            None
+                            if pd.isna(macd["signal_line"].iloc[i])
+                            else float(macd["signal_line"].iloc[i])
+                        ),
+                        (
+                            None
+                            if pd.isna(macd["histogram"].iloc[i])
+                            else float(macd["histogram"].iloc[i])
+                        ),
                         None if pd.isna(atr.iloc[i]) else float(atr.iloc[i]),
-                        None if pd.isna(bb["bb_upper"].iloc[i]) else float(bb["bb_upper"].iloc[i]),
-                        None if pd.isna(bb["bb_middle"].iloc[i]) else float(bb["bb_middle"].iloc[i]),
-                        None if pd.isna(bb["bb_lower"].iloc[i]) else float(bb["bb_lower"].iloc[i]),
+                        (
+                            None
+                            if pd.isna(bb["bb_upper"].iloc[i])
+                            else float(bb["bb_upper"].iloc[i])
+                        ),
+                        (
+                            None
+                            if pd.isna(bb["bb_middle"].iloc[i])
+                            else float(bb["bb_middle"].iloc[i])
+                        ),
+                        (
+                            None
+                            if pd.isna(bb["bb_lower"].iloc[i])
+                            else float(bb["bb_lower"].iloc[i])
+                        ),
                         df["observation_date"].iloc[i],
                     ),
                 )
