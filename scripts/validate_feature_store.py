@@ -21,21 +21,39 @@ def main():
     print()
 
     feature_columns = [
-        "volatility_5d", "volatility_20d", "volatility_60d",
-        "rsi_14", "macd_line", "macd_signal", "macd_histogram", "atr_14",
-        "bb_upper", "bb_middle", "bb_lower", "rate_differential",
-        "day_of_week", "economic_release_flag",
+        "volatility_5d",
+        "volatility_20d",
+        "volatility_60d",
+        "rsi_14",
+        "macd_line",
+        "macd_signal",
+        "macd_histogram",
+        "atr_14",
+        "bb_upper",
+        "bb_middle",
+        "bb_lower",
+        "rate_differential",
+        "day_of_week",
+        "economic_release_flag",
     ]
 
-    print("Missing value counts per feature (some are EXPECTED at the start, due to rolling-window warm-up):")
+    print(
+        "Missing value counts per feature (some are EXPECTED at the start, due to rolling-window warm-up):"
+    )
     for col in feature_columns:
         missing_count = df[col].isna().sum()
-        print(f"  {col:25s}: {missing_count:5d} missing ({missing_count/len(df)*100:.1f}%)")
+        print(
+            f"  {col:25s}: {missing_count:5d} missing ({missing_count/len(df)*100:.1f}%)"
+        )
 
     print()
     complete_rows = df.dropna(subset=feature_columns)
-    print(f"Rows with ALL features present (usable for Phase 7 modeling): {len(complete_rows)}")
-    print(f"Date range of complete rows: {complete_rows['observation_date'].min()} to {complete_rows['observation_date'].max()}")
+    print(
+        f"Rows with ALL features present (usable for Phase 7 modeling): {len(complete_rows)}"
+    )
+    print(
+        f"Date range of complete rows: {complete_rows['observation_date'].min()} to {complete_rows['observation_date'].max()}"
+    )
 
 
 if __name__ == "__main__":

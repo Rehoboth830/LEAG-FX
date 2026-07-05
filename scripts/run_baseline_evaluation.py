@@ -42,7 +42,9 @@ def main():
 
     sma_returns = sma_crossover_returns(prices, short_window=20, long_window=50)
     sma_metrics = evaluate_strategy(sma_returns)
-    print_metrics("BASELINE 2: SMA(20/50) Crossover (with transaction costs)", sma_metrics)
+    print_metrics(
+        "BASELINE 2: SMA(20/50) Crossover (with transaction costs)", sma_metrics
+    )
 
 
 if __name__ == "__main__":
