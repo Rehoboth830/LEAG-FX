@@ -29,10 +29,16 @@ def main():
     finally:
         conn.close()
 
-    yield_data["observation_date"] = pd.to_datetime(yield_data["observation_date"]).dt.date
-    nikkei_data["observation_date"] = pd.to_datetime(nikkei_data["timestamp_utc"]).dt.tz_localize(None).dt.date
+    yield_data["observation_date"] = pd.to_datetime(
+        yield_data["observation_date"]
+    ).dt.date
+    nikkei_data["observation_date"] = (
+        pd.to_datetime(nikkei_data["timestamp_utc"]).dt.tz_localize(None).dt.date
+    )
     nikkei_data["nikkei_return"] = nikkei_data["close"].pct_change()
-    vix_data["observation_date"] = pd.to_datetime(vix_data["timestamp_utc"]).dt.tz_localize(None).dt.date
+    vix_data["observation_date"] = (
+        pd.to_datetime(vix_data["timestamp_utc"]).dt.tz_localize(None).dt.date
+    )
 
     conn = get_connection()
     stored = 0
@@ -43,7 +49,9 @@ def main():
 
             yield_lookup = yield_data.set_index("observation_date")["value"].to_dict()
             nikkei_lookup = nikkei_data.set_index("observation_date")["close"].to_dict()
-            nikkei_return_lookup = nikkei_data.set_index("observation_date")["nikkei_return"].to_dict()
+            nikkei_return_lookup = nikkei_data.set_index("observation_date")[
+                "nikkei_return"
+            ].to_dict()
             vix_lookup = vix_data.set_index("observation_date")["close"].to_dict()
 
             for obs_date in all_dates:
@@ -55,8 +63,10 @@ def main():
                     WHERE observation_date = %s
                     """,
                     (
-                        yield_lookup.get(obs_date), nikkei_lookup.get(obs_date),
-                        nikkei_return_lookup.get(obs_date), vix_lookup.get(obs_date),
+                        yield_lookup.get(obs_date),
+                        nikkei_lookup.get(obs_date),
+                        nikkei_return_lookup.get(obs_date),
+                        vix_lookup.get(obs_date),
                         obs_date,
                     ),
                 )
