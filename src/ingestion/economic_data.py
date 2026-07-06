@@ -1,12 +1,7 @@
 ﻿"""
 Economic data ingestion pipeline (Phase 3, updated Phase 4 Fix 4,
-extended here to add PAYEMS/NFP - a real gap flagged in Phase 6 rather
-than left undocumented).
-
-PAYEMS (Total Nonfarm Payroll Employment) is FRED's actual NFP series -
-previously missing despite the knowledge base having an entry for it.
-Treated as revision-prone (payroll figures ARE revised in later months),
-same handling as GDP/CPI/PCE.
+extended Phase 7.1 Step 1 with DGS10 - US 10-Year Treasury Yield, a
+real cross-asset signal not previously ingested).
 """
 
 import os
@@ -36,6 +31,7 @@ FRED_SERIES = {
         "revised": True,
     },
     "PAYEMS": {"name": "Total Nonfarm Payroll Employment (NFP)", "revised": True},
+    "DGS10": {"name": "10-Year Treasury Constant Maturity Rate", "revised": False},
 }
 
 
