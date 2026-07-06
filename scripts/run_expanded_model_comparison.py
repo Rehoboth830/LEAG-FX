@@ -1,8 +1,13 @@
 ﻿"""
-Phase 7.1 Step 4 (CORRECTED) - fixed a real bug: the prices query had
-no symbol filter, so after Step 1 added Nikkei/VIX into the SAME
-raw_market_data table, it was silently pulling all three symbols'
-prices mixed into one column.
+Phase 7.1 Step 4 (CORRECTED AGAIN) - fixes a serious methodological
+bug: 20-day horizon returns are computed at EVERY day, so they overlap
+heavily. Feeding overlapping returns into a compounding equity curve
+(designed for sequential, non-overlapping daily returns) produces
+mathematically meaningless, wildly inflated results.
+
+FIX: evaluate only NON-OVERLAPPING 20-day periods (sample every 20th
+day), so the equity curve compounds honestly, exactly as it does for
+the daily-return evaluations elsewhere in this project.
 """
 
 import pandas as pd
@@ -13,7 +18,7 @@ from xgboost import XGBClassifier
 
 from src.common.db import get_connection
 from src.research.horizon_target import build_horizon_direction_target
-from src.research.model_evaluation import evaluate_model_predictions
+from src.research.performance_metrics import evaluate_strategy
 from src.research.walk_forward import apply_split, generate_walk_forward_splits
 
 FEATURE_COLUMNS = [
@@ -57,15 +62,25 @@ def run_model(model_name, model, df, use_scaling=False):
         )
 
     valid_idx = predictions.dropna().index
-    result = evaluate_model_predictions(
-        predictions.loc[valid_idx], df.loc[valid_idx, "horizon_return"]
+
+    # THE FIX: sample every HORIZON_DAYS-th row only, so returns are
+    # sequential and non-overlapping - honest compounding.
+    non_overlapping_idx = valid_idx[::HORIZON_DAYS]
+
+    strategy_returns = (
+        predictions.loc[non_overlapping_idx]
+        * df.loc[non_overlapping_idx, "horizon_return"]
+    )
+    strategy_returns = strategy_returns.dropna()
+
+    metrics = evaluate_strategy(
+        strategy_returns, trading_days_per_year=(252 // HORIZON_DAYS)
     )
 
     print(
-        f"  {model_name:20s}: Sharpe={result['metrics'].sharpe_ratio:+.4f}  "
-        f"MaxDD={result['metrics'].max_drawdown*100:.2f}%  "
-        f"WinRate={result['metrics'].win_rate*100:.1f}%  "
-        f"BeatsBaseline={result['comparison']['beats_baseline_overall']}"
+        f"  {model_name:20s}: n_periods={len(strategy_returns):3d}  "
+        f"Sharpe={metrics.sharpe_ratio:+.4f}  MaxDD={metrics.max_drawdown*100:.2f}%  "
+        f"WinRate={metrics.win_rate*100:.1f}%  BeatsBaseline={metrics.sharpe_ratio > 0.5436}"
     )
 
 
@@ -107,9 +122,7 @@ def main():
     print(
         f"Training/testing on {len(merged_clean)} complete rows, {HORIZON_DAYS}-day horizon"
     )
-    print(
-        f"Features used: {len(FEATURE_COLUMNS)} (including 4 new cross-asset/surprise features)"
-    )
+    print("(evaluated on NON-OVERLAPPING periods only, to avoid double-counting)")
     print()
 
     run_model(
