@@ -1,0 +1,5 @@
+﻿ALTER TABLE features_daily
+    ADD COLUMN IF NOT EXISTS us_10yr_yield NUMERIC(10, 4),
+    ADD COLUMN IF NOT EXISTS nikkei_close NUMERIC(14, 4),
+    ADD COLUMN IF NOT EXISTS nikkei_return NUMERIC(10, 6),
+    ADD COLUMN IF NOT EXISTS vix_close NUMERIC(10, 4);
