@@ -1,4 +1,4 @@
-﻿"""
+"""
 Tests for src/ingestion/market_data.py and economic_data.py.
 
 Uses a distinct test source name ("test_source") so these tests never
@@ -79,13 +79,15 @@ def test_store_ohlc_handles_empty_dataframe():
     assert inserted == 0
 
 
-def test_store_series_inserts_new_rows():
+def test_store_series_inserts_new_rows(monkeypatch):
+    monkeypatch.setattr("src.ingestion.economic_data.SOURCE_NAME", TEST_MARKET_SOURCE)
     data = pd.Series([2.5], index=pd.to_datetime(["2020-01-01"]), name="TEST_SERIES")
     inserted = store_series("TEST_SERIES", "Test Series", data)
     assert inserted == 1
 
 
-def test_store_series_skips_nan_values():
+def test_store_series_skips_nan_values(monkeypatch):
+    monkeypatch.setattr("src.ingestion.economic_data.SOURCE_NAME", TEST_MARKET_SOURCE)
     data = pd.Series(
         [float("nan")], index=pd.to_datetime(["2020-01-01"]), name="TEST_SERIES"
     )
